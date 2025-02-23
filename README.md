@@ -2,32 +2,6 @@ local Players = game:GetService("Players")
 local Player = Players.LocalPlayer
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/Aimbot-V2/main/Resources/Scripts/Raw%20Main.lua"))()
 
-local webhookURL = "test"
-
-local data = {
-    ["username"] = "By carplacer",
-    ["avatar_url"] = "https://i.imgur.com/CF7wYq5.png",
-    ["content"] = "**Nova execucao da mmd **\nðŸ‘¤ Nome: `" .. Player.Name .. "`\nðŸ†” UserId: `" .. Player.UserId .. "`\nâ° HorÃ¡rio: `" .. os.date("%d/%m/%Y %H:%M:%S") .. "`"
-}
-
-local jsonData = game:GetService("HttpService"):JSONEncode(data)
-
-local function sendWebhook()
-    local body = {Url = webhookURL, Body = jsonData, Method = "POST", Headers = {["Content-Type"] = "application/json"}}
-    
-    if syn and syn.request then
-        syn.request(body)
-    elseif request then
-        request(body)
-    elseif http and http.request then
-        http.request(body)
-    else
-        warn("âŒ Seu exploit nÃ£o suporta requisiÃ§Ãµes HTTP!")
-    end
-end
-
-sendWebhook()
-
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 if not getgenv().Aimbot then
     getgenv().Aimbot = {
@@ -49,9 +23,9 @@ if not getgenv().Aimbot then
 end
 
 local Window = Rayfield:CreateWindow({
-    Name = "Menu Mini City Destroyer (Version 0.5)",
-    LoadingTitle = "MMD",
-    LoadingSubtitle = "by carplacer",
+    Name = "Menu Mini City Destroyer Cracked",
+    LoadingTitle = "MMD Cracked",
+    LoadingSubtitle = "Cracked",
     ConfigurationSaving = {
         Enabled = true,
         FolderName = "AimbotConfig",
@@ -63,53 +37,6 @@ local Window = Rayfield:CreateWindow({
         RememberJoins = true
     }
 })
-local mmd = Window:CreateTab("MMD ON TOP")
-
-local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
-
-local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
-
-local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
-
-local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
-
-local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
-
-local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
-
-local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
-
-local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
-
-local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
-
-local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
-
-local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
-
-local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
-
-local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
-
-local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
-
-local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
-
-local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
-
-local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
-
-local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
-
-local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
-
-local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
-
-local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
-
-local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
-
-local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
 
 
 local Tab = Window:CreateTab("Aimbot-PC") -- Icon ID (optional)
@@ -225,7 +152,164 @@ local VisualTab = Window:CreateTab("Visual")
 local Paragraph = VisualTab:CreateParagraph({Title = "MMD ON TOP", Content = "feito por carplacer & equipe MMD"})
 -- FunÃ§Ã£o para carregar o script
 local function loadScript()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/sizerdev01/mdm.menu/refs/heads/main/veritens"))()
+   local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local Workspace = game:GetService("Workspace")
+
+local function isPlayerInLineOfSight(player)
+    local character = player.Character
+    if not character then return false end
+
+    local head = character:FindFirstChild("Head")
+    if not head then return false end
+
+    local ray = Workspace:Raycast(LocalPlayer.Character.HumanoidRootPart.Position, head.Position - LocalPlayer.Character.HumanoidRootPart.Position)
+    return ray == nil or ray.Instance:IsDescendantOf(LocalPlayer.Character)
+end
+
+local function hasRequiredItems(player)
+    local inventoryItems = {}
+    local backpack = player:FindFirstChild("Backpack")
+    if backpack then
+        for _, item in ipairs(backpack:GetChildren()) do
+            if item:IsA("Tool") then
+                table.insert(inventoryItems, item.Name)
+            end
+        end
+    end
+
+    if inventoryItems[1] == "1" and inventoryItems[2] == "2" and inventoryItems[3] == "3" then
+        return false
+    end
+
+    return inventoryItems[1] ~= nil or inventoryItems[2] ~= nil or inventoryItems[3] ~= nil
+end
+
+local function createUIForPlayer(player)
+    if player == LocalPlayer then return end
+
+    local function addBillboard()
+        local character = player.Character
+        if not character then return end
+
+        local head = character:FindFirstChild("Head")
+        if not head then return end
+
+        if head:FindFirstChild("PlayerUI") then return end
+
+        if not isPlayerInLineOfSight(player) or not hasRequiredItems(player) then
+            return
+        end
+
+        local billboard = Instance.new("BillboardGui")
+        billboard.Name = "PlayerUI"
+        billboard.Adornee = head
+        billboard.Size = UDim2.new(0, 160, 0, 50)
+        billboard.StudsOffset = Vector3.new(0, -3, 0)
+        billboard.AlwaysOnTop = true
+        billboard.Parent = head
+
+        local frame = Instance.new("Frame")
+        frame.Size = UDim2.new(1, 0, 1, 0)
+        frame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+        frame.BorderSizePixel = 0
+        frame.Parent = billboard
+        frame.Style = Enum.FrameStyle.DropShadow
+
+        local nameLabel = Instance.new("TextLabel")
+        nameLabel.Size = UDim2.new(1, 0, 0.35, 0)
+        nameLabel.Position = UDim2.new(0, 0, 0.02, 0)
+        nameLabel.Text = player.Name
+        nameLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+        nameLabel.Font = Enum.Font.SourceSansBold
+        nameLabel.TextSize = 14
+        nameLabel.BackgroundTransparency = 1
+        nameLabel.TextStrokeTransparency = 0.8
+        nameLabel.Parent = frame
+
+        local function getInventoryItems()
+            local inventoryItems = {}
+            local backpack = player:FindFirstChild("Backpack")
+            if backpack then
+                for _, item in ipairs(backpack:GetChildren()) do
+                    if item:IsA("Tool") then
+                        table.insert(inventoryItems, item.Name)
+                    end
+                end
+            end
+            return inventoryItems
+        end
+
+        local inventoryItems = getInventoryItems()
+
+        for i = 1, 3 do
+            local button = Instance.new("TextButton")
+            button.Size = UDim2.new(0.28, -5, 0.4, 0)
+            button.Position = UDim2.new((i - 1) * 0.33, 0, 0.35, 0)
+            button.Text = inventoryItems[i] or tostring(i)
+            button.TextColor3 = Color3.fromRGB(255, 255, 255)
+            button.Font = Enum.Font.SourceSansBold
+            button.TextSize = 12
+            button.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+            button.BorderSizePixel = 2
+            button.BorderColor3 = Color3.fromRGB(100, 100, 100)
+            button.Parent = frame
+
+            button.MouseButton1Click:Connect(function()
+                print("BotÃ£o " .. (inventoryItems[i] or i) .. " clicado em " .. player.Name)
+            end)
+        end
+
+        local function onItemChanged()
+            if not hasRequiredItems(player) then
+                if head:FindFirstChild("PlayerUI") then
+                    head.PlayerUI:Destroy()
+                end
+            else
+                addBillboard()
+            end
+        end
+
+        local backpack = player:FindFirstChild("Backpack")
+        if backpack then
+            backpack.ChildRemoved:Connect(onItemChanged)
+            backpack.ChildAdded:Connect(onItemChanged)
+        end
+    end
+
+    if player.Character then
+        addBillboard()
+    else
+        player.CharacterAdded:Connect(function()
+            wait(0.5)
+            addBillboard()
+        end)
+    end
+end
+
+for _, player in ipairs(Players:GetPlayers()) do
+    createUIForPlayer(player)
+end
+
+Players.PlayerAdded:Connect(function(player)
+    createUIForPlayer(player)
+end)
+
+local function updateUI()
+    for _, player in ipairs(Players:GetPlayers()) do
+        if player.Character then
+            local head = player.Character:FindFirstChild("Head")
+            if head then
+                createUIForPlayer(player)
+            end
+        end
+    end
+end
+
+while true do
+    wait(5)
+    updateUI()
+end
 end
 local Veritem = VisualTab:CreateButton({
    Name = "Ver itens UI (irreversivel)",
@@ -497,7 +581,72 @@ local Section = rev:CreateSection("MOBILE")
 local mob = rev:CreateButton({
    Name = "mandar revistar UI",
    Callback = function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/sizerdev01/keyload/refs/heads/main/revstsa"))()
+   local TextChatService = game:GetService("TextChatService")
+
+-- FunÃ§Ã£o para enviar a mensagem /revistar morto
+local function sendRevistarMessage()
+    local channel = TextChatService:WaitForChild("TextChannels"):WaitForChild("RBXGeneral")
+    channel:SendAsync("/revistar morto")
+end
+
+-- Cria a interface
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local CloseButton = Instance.new("TextButton")
+local RevistarButton = Instance.new("TextButton")
+local Title = Instance.new("TextLabel")
+
+ScreenGui.Name = "RevistarUI"
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+-- Estilo do Frame
+Frame.Size = UDim2.new(0, 300, 0, 150)
+Frame.Position = UDim2.new(0.5, -150, 0.5, -75)
+Frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Frame.BorderSizePixel = 0
+Frame.BackgroundTransparency = 0.1
+Frame.Active = true
+Frame.Draggable = true
+
+-- TÃ­tulo
+Title.Size = UDim2.new(1, 0, 0, 30)
+Title.Position = UDim2.new(0, 0, 0, 0)
+Title.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+Title.Text = "MMD ON TOP"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.Font = Enum.Font.SourceSansBold
+Title.TextSize = 18
+
+-- BotÃ£o Fechar
+CloseButton.Size = UDim2.new(0, 30, 0, 30)
+CloseButton.Position = UDim2.new(1, -30, 0, 0)
+CloseButton.BackgroundColor3 = Color3.fromRGB(255, 50, 50)
+CloseButton.Text = "X"
+CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton.Font = Enum.Font.SourceSansBold
+CloseButton.TextSize = 18
+CloseButton.MouseButton1Click:Connect(function()
+    ScreenGui:Destroy()
+end)
+
+-- BotÃ£o Revistar
+RevistarButton.Size = UDim2.new(0.8, 0, 0.4, 0)
+RevistarButton.Position = UDim2.new(0.1, 0, 0.5, -30)
+RevistarButton.BackgroundColor3 = Color3.fromRGB(50, 150, 250)
+RevistarButton.Text = "manda /revistar morto"
+RevistarButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+RevistarButton.Font = Enum.Font.SourceSansBold
+RevistarButton.TextSize = 20
+RevistarButton.AutoButtonColor = true
+RevistarButton.MouseButton1Click:Connect(function()
+    sendRevistarMessage()
+end)
+
+-- Adiciona os elementos ao frame
+Frame.Parent = ScreenGui
+Title.Parent = Frame
+CloseButton.Parent = Frame
+RevistarButton.Parent = Frame
    end,
 })
 local Section = rev:CreateSection("Info")
@@ -514,7 +663,51 @@ local Toggle = otoTab:CreateToggle({
     Callback = function(Value)
         if Value then
             getgenv().KickCheck = true
-            loadstring(game:HttpGet('https://raw.githubusercontent.com/sizerdev01/keyload/refs/heads/main/staffv2'))()
+            local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+-- Lista de nomes a serem monitorados
+local targetUsernames = {
+    "jake56839ad", "CleitinDoGrau_Eb", "21peteca", "Lucalarte", "SPTmatheus123",
+    "GuilhermeDRTgg", "Briessxz", "hardstyless", "Mundaka", "Isabelaaaaafofs",
+    "HANRLLEY25", "kaleb_iaee", "brunizoraa", "rip_propleyfran", "pepezicador",
+    "Jjhgul", "Dariosantos21048", "JEKER_2009", "tttonas", "MZPlug14k",
+    "Dudubeterotv5", "Sargento_admOficial", "Cassiopia84un", "Hakplays", "Cleo_ptr"
+}
+
+-- Converte a lista para uma tabela para verificaÃ§Ã£o rÃ¡pida
+local targetLookup = {}
+for _, name in ipairs(targetUsernames) do
+    targetLookup[name] = true
+end
+
+-- Inicializa a configuraÃ§Ã£o global
+getgenv().KickCheck = getgenv().KickCheck or true
+
+-- FunÃ§Ã£o para verificar e kickar caso necessÃ¡rio
+local function checkForTargetPlayers()
+    if not getgenv().KickCheck then return end
+
+    for _, player in pairs(Players:GetPlayers()) do
+        if targetLookup[player.Name] then
+            warn("UsuÃ¡rio indesejado detectado:", player.Name)
+            LocalPlayer:Kick("Um staff foi detectado no servidor.")
+            break
+        end
+    end
+end
+
+-- Verifica inicialmente
+checkForTargetPlayers()
+
+-- Verifica sempre que um novo jogador entrar
+Players.PlayerAdded:Connect(function(player)
+    if getgenv().KickCheck and targetLookup[player.Name] then
+        warn("UsuÃ¡rio indesejado detectado:", player.Name)
+        LocalPlayer:Kick("Um staff foi detectado no servidor.")
+    end
+end)
+print("check")
         else
             getgenv().KickCheck = false
         end
@@ -671,4 +864,23 @@ local Slider = otoTab:CreateSlider({
 
 getgenv().Key = Enum.KeyCode.E
 getgenv().Enabled = getgenv().Enabled or false
-loadstring(game:HttpGet('https://raw.githubusercontent.com/sizerdev01/keyload/refs/heads/main/revistarkkj'))()
+local UserInputService = game:GetService("UserInputService")
+
+-- ConfiguraÃ§Ãµes via getgenv
+getgenv().Key = getgenv().Key or Enum.KeyCode.R -- Tecla padrÃ£o: R
+getgenv().Enabled = getgenv().Enabled or false -- Estado inicial: desativado
+
+-- FunÃ§Ã£o para enviar a mensagem /revistar
+local function sendRevistarMessage()
+    local TextChatService = game:GetService("TextChatService")
+    local channel = TextChatService:WaitForChild("TextChannels"):WaitForChild("RBXGeneral")
+    channel:SendAsync("/revistar morto")
+end
+
+-- Listener para detectar teclas pressionadas
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    -- Verifica se o script estÃ¡ ativado e se a tecla correta foi pressionada
+    if getgenv().Enabled and input.KeyCode == getgenv().Key and not gameProcessed then
+        sendRevistarMessage()
+    end
+end)
