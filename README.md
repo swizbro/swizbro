@@ -207,22 +207,4 @@ espButton.MouseButton1Click:Connect(function()
         enableESP()
     else
         espButton.Text = "Ativar ESP"
-        -- Para desativar ESP, você precisaria remover os adornlocal Section11 = Tab:CreateSection("aim config")
--- Toggle para habilitar/desabilitar o Aimbot
-Tab:CreateToggle({
-    Name = "ativar aimbot",
-    CurrentValue = getgenv().Aimbot.Settings.Enabled == true, -- Garante que seja true ou false
-    Flag = "AimbotEnabled",
-    Callback = function(Value)
-        getgenv().Aimbot.Settings.Enabled = Value
-    end
-})
-
--- Toggle para checar se o jogador estÃ¡ vivo
-Tab:CreateToggle({
-    Name = "vivo check",
-    CurrentValue = getgenv().Aimbot.Settings.AliveCheck == true, -- Garante que seja true ou false
-    Flag = "AliveCheck",
-    Callback = function(Value)
-        getgenv().Aimbot.Settings.AliveCheck = Value
-    end
+        -- Para desativar ESP, você precisaria remover os adorn
