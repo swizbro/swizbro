@@ -200,7 +200,4 @@ end
 
 local function enableESP()
     for _, player in pairs(game.Players:GetPlayers()) do
-        createESP(player)
-    end
-
-    game.Players.PlayerAdded:
+        create
