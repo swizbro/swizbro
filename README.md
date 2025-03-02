@@ -191,7 +191,7 @@ Tab:CreateToggle({
     Flag = "AimbotEnabled",
     Callback = function(Value)
         getgenv().Aimbot.Settings.Enabled = Value
-    end
+    end,
 })
 
 -- Toggle para checar se o jogador estÃ¡ vivo
@@ -201,4 +201,4 @@ Tab:CreateToggle({
     Flag = "AliveCheck",
     Callback = function(Value)
         getgenv().Aimbot.Settings.AliveCheck = Value
-    end
+    end,
