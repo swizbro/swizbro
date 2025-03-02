@@ -10,7 +10,6 @@ frame.BackgroundColor3 = Color3.new(0, 0, 0)
 frame.BackgroundTransparency = 0.5
 frame.Draggable = true
 frame.Active = true
-frame.DraggableSpeed = 2 -- Aumentar a velocidade do arrasto
 frame.Parent = screenGui
 
 local titleLabel = Instance.new("TextLabel")
@@ -104,42 +103,6 @@ antFallDamageButton.Text = "Ativar Ant Dano de Queda"
 antFallDamageButton.TextScaled = true
 antFallDamageButton.Parent = tab2Content
 
--- Adicionando o script fornecido ao Tab 2
-local aimConfigSection = Instance.new("Frame")
-aimConfigSection.Size = UDim2.new(1, 0, 0.2, 0)
-aimConfigSection.Position = UDim2.new(0, 0, 0.1, 0)
-aimConfigSection.BackgroundTransparency = 1
-aimConfigSection.Parent = tab2Content
-
-local aimConfigLabel = Instance.new("TextLabel")
-aimConfigLabel.Size = UDim2.new(1, 0, 0.2, 0)
-aimConfigLabel.Position = UDim2.new(0, 0, 0, 0)
-aimConfigLabel.Text = "aim config"
-aimConfigLabel.TextColor3 = Color3.new(1, 1, 1)
-aimConfigLabel.BackgroundTransparency = 1
-aimConfigLabel.TextScaled = true
-aimConfigLabel.Parent = aimConfigSection
-
--- Toggle para habilitar/desabilitar o Aimbot
-Tab:CreateToggle({
-    Name = "ativar aimbot",
-    CurrentValue = getgenv().Aimbot.Settings.Enabled == true, -- Garante que seja true ou false
-    Flag = "AimbotEnabled",
-    Callback = function(Value)
-        getgenv().Aimbot.Settings.Enabled = Value
-    end
-})
-
--- Toggle para checar se o jogador está vivo
-Tab:CreateToggle({
-    Name = "vivo check",
-    CurrentValue = getgenv().Aimbot.Settings.AliveCheck == true, -- Garante que seja true ou false
-    Flag = "AliveCheck",
-    Callback = function(Value)
-        getgenv().Aimbot.Settings.AliveCheck = Value
-    end
-})
-
 -- Script de Voo com Animação
 local flySpeed = 50
 local flyEnabled = false
@@ -154,6 +117,7 @@ local function startFlying()
         bodyVelocity.Velocity = Vector3.new(0, flySpeed, 0)
         bodyVelocity.Parent = humanoidRootPart
 
+        -- Animação de voo (Substitua "YourAnimationID" pelo ID da sua animação de voo)
         flyingAnim = character:WaitForChild("Humanoid"):LoadAnimation(Instance.new("Animation", {AnimationId = "rbxassetid://YourAnimationID"}))
         flyingAnim:Play()
 
@@ -194,3 +158,50 @@ flyButton.MouseButton1Click:Connect(function()
         stopFlying()
     end
 end)
+
+-- Script de ESP Melhorado com Travers
+local espEnabled = false
+
+local function createESP(player)
+    if player.Character then
+        local highlight = Instance.new("BoxHandleAdornment")
+        highlight.Size = player.Character.HumanoidRootPart.Size
+        highlight.Adornee = player.Character.HumanoidRootPart
+        highlight.Color3 = Color3.new(0, 1, 0) -- Cor da caixa (verde)
+        highlight.Transparency = 0.5
+        highlight.AlwaysOnTop = true
+        highlight.Parent = player.Character.HumanoidRootPart
+
+        -- Criar um BillboardGui para mostrar a distância
+        local billboardGui = Instance.new("BillboardGui")
+        billboardGui.Adornee = player.Character.HumanoidRootPart
+        billboardGui.Size = UDim2.new(0, 100, 0, 50)
+        billboardGui.StudsOffset = Vector3.new(0, 3, 0)
+        billboardGui.AlwaysOnTop = true
+        billboardGui.Parent = player.Character.HumanoidRootPart
+
+        local textLabel = Instance.new("TextLabel")
+        textLabel.Size = UDim2.new(1, 0, 1, 0)
+        textLabel.BackgroundTransparency = 1
+        textLabel.TextColor3 = Color3.new(1, 0, 0) -- Cor do texto (vermelho)
+        textLabel.TextScaled = true
+        textLabel.Parent = billboardGui
+
+        -- Função para atualizar a distância
+        local function updateDistance()
+            local distance = (player.Character.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+            textLabel.Text = string.format("%.1f studs", distance)
+        end
+
+        -- Atualizar a distância a cada quadro
+        game:GetService("RunService").RenderStepped:Connect(updateDistance)
+    end
+end
+
+local function enableESP()
+    for _, player in pairs(game.Players:GetPlayers()) do
+        createESP(player)
+    end
+
+    game.Players.PlayerAdded:Connect(function(player)
+        player
