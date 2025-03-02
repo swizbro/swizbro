@@ -4,8 +4,8 @@ screenGui.Name = "Feito por Swiz"
 screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
 local frame = Instance.new("Frame")
-frame.Size = UDim2.new(0, 400, 0, 400)
-frame.Position = UDim2.new(0.5, -200, 0.5, -200)
+frame.Size = UDim2.new(0, 400, 0, 300)
+frame.Position = UDim2.new(0.5, -200, 0.5, -150)
 frame.BackgroundColor3 = Color3.new(0, 0, 0)
 frame.BackgroundTransparency = 0.5
 frame.Draggable = true
@@ -21,87 +21,26 @@ titleLabel.BackgroundTransparency = 1
 titleLabel.TextScaled = true
 titleLabel.Parent = frame
 
-local tab1Button = Instance.new("TextButton")
-tab1Button.Size = UDim2.new(0.5, 0, 0.1, 0)
-tab1Button.Position = UDim2.new(0, 0, 0.1, 0)
-tab1Button.Text = "Tab 1"
-tab1Button.TextScaled = true
-tab1Button.Parent = frame
-
-local tab2Button = Instance.new("TextButton")
-tab2Button.Size = UDim2.new(0.5, 0, 0.1, 0)
-tab2Button.Position = UDim2.new(0.5, 0, 0.1, 0)
-tab2Button.Text = "Tab 2"
-tab2Button.TextScaled = true
-tab2Button.Parent = frame
-
-local tab1Content = Instance.new("Frame")
-tab1Content.Size = UDim2.new(1, 0, 0.8, 0)
-tab1Content.Position = UDim2.new(0, 0, 0.2, 0)
-tab1Content.BackgroundTransparency = 1
-tab1Content.Visible = true
-tab1Content.Parent = frame
-
-local tab2Content = Instance.new("Frame")
-tab2Content.Size = UDim2.new(1, 0, 0.8, 0)
-tab2Content.Position = UDim2.new(0, 0, 0.2, 0)
-tab2Content.BackgroundTransparency = 1
-tab2Content.Visible = false
-tab2Content.Parent = frame
-
-tab1Button.MouseButton1Click:Connect(function()
-    tab1Content.Visible = true
-    tab2Content.Visible = false
-end)
-
-tab2Button.MouseButton1Click:Connect(function()
-    tab1Content.Visible = false
-    tab2Content.Visible = true
-end)
-
 local flyButton = Instance.new("TextButton")
-flyButton.Size = UDim2.new(1, 0, 0.2, 0)
-flyButton.Position = UDim2.new(0, 0, 0, 0)
+flyButton.Size = UDim2.new(1, 0, 0.3, 0)
+flyButton.Position = UDim2.new(0, 0, 0.1, 0)
 flyButton.Text = "Ativar Voo"
 flyButton.TextScaled = true
-flyButton.Parent = tab1Content
+flyButton.Parent = frame
 
 local espButton = Instance.new("TextButton")
-espButton.Size = UDim2.new(1, 0, 0.2, 0)
-espButton.Position = UDim2.new(0, 0, 0.2, 0)
+espButton.Size = UDim2.new(1, 0, 0.3, 0)
+espButton.Position = UDim2.new(0, 0, 0.4, 0)
 espButton.Text = "Ativar ESP"
 espButton.TextScaled = true
-espButton.Parent = tab1Content
+espButton.Parent = frame
 
 local noclipButton = Instance.new("TextButton")
-noclipButton.Size = UDim2.new(1, 0, 0.2, 0)
-noclipButton.Position = UDim2.new(0, 0, 0.4, 0)
+noclipButton.Size = UDim2.new(1, 0, 0.3, 0)
+noclipButton.Position = UDim2.new(0, 0, 0.7, 0)
 noclipButton.Text = "Ativar Noclip"
 noclipButton.TextScaled = true
-noclipButton.Parent = tab1Content
-
-local speedLabel = Instance.new("TextLabel")
-speedLabel.Size = UDim2.new(1, 0, 0.2, 0)
-speedLabel.Position = UDim2.new(0, 0, 0.6, 0)
-speedLabel.Text = "Velocidade de Voo"
-speedLabel.TextColor3 = Color3.new(1, 1, 1)
-speedLabel.BackgroundTransparency = 1
-speedLabel.TextScaled = true
-speedLabel.Parent = tab1Content
-
-local speedBox = Instance.new("TextBox")
-speedBox.Size = UDim2.new(1, 0, 0.2, 0)
-speedBox.Position = UDim2.new(0, 0, 0.8, 0)
-speedBox.Text = "50"
-speedBox.TextScaled = true
-speedBox.Parent = tab1Content
-
-local antFallDamageButton = Instance.new("TextButton")
-antFallDamageButton.Size = UDim2.new(1, 0, 0.2, 0)
-antFallDamageButton.Position = UDim2.new(0, 0, 0, 0)
-antFallDamageButton.Text = "Ativar Ant Dano de Queda"
-antFallDamageButton.TextScaled = true
-antFallDamageButton.Parent = tab2Content
+noclipButton.Parent = frame
 
 -- Script de Voo
 local flySpeed = 50
@@ -138,7 +77,6 @@ local function stopFlying()
 end
 
 flyButton.MouseButton1Click:Connect(function()
-    flySpeed = tonumber(speedBox.Text) or 50
     flyEnabled = not flyEnabled
     if flyEnabled then
         flyButton.Text = "Desativar Voo"
@@ -207,4 +145,60 @@ espButton.MouseButton1Click:Connect(function()
         enableESP()
     else
         espButton.Text = "Ativar ESP"
-        -- Para desativar ESP, você precisaria remover os adorn
+        -- Para desativar ESP, você precisaria remover os adornos e labels adicionados, isso pode ser feito com um script adicional.
+    end
+end)
+
+-- Script de Noclip (atravessar paredes)
+local noclipEnabled = false
+
+local function startNoclip()
+    local character = game.Players.LocalPlayer.Character
+    if character then
+        for _, part in pairs(character:GetDescendants()) do
+            if part:IsA("BasePart") and part.CanCollide then
+                part.CanCollide = false
+            end
+        end
+    end
+end
+
+local function stopNoclip()
+    local character = game.Players.LocalPlayer.Character
+    if character then
+        for _, part in pairs(character:GetDescendants()) do
+            if part:IsA("BasePart") then
+                part.CanCollide = true
+            end
+        end
+    end
+end
+
+noclipButton.MouseButton1Click:Connect(function()
+    noclipEnabled = not noclipEnabled
+    if noclipEnabled then
+        noclipButton.Text = "Desativar Noclip"
+        startNoclip()
+    else
+        noclipButton.Text = "Ativar Noclip"
+        stopNoclip()
+    end
+end)local Section11 = Tab:CreateSection("aim config")
+-- Toggle para habilitar/desabilitar o Aimbot
+Tab:CreateToggle({
+    Name = "ativar aimbot",
+    CurrentValue = getgenv().Aimbot.Settings.Enabled == true, -- Garante que seja true ou false
+    Flag = "AimbotEnabled",
+    Callback = function(Value)
+        getgenv().Aimbot.Settings.Enabled = Value
+    end
+})
+
+-- Toggle para checar se o jogador estÃ¡ vivo
+Tab:CreateToggle({
+    Name = "vivo check",
+    CurrentValue = getgenv().Aimbot.Settings.AliveCheck == true, -- Garante que seja true ou false
+    Flag = "AliveCheck",
+    Callback = function(Value)
+        getgenv().Aimbot.Settings.AliveCheck = Value
+    end
