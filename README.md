@@ -203,5 +203,4 @@ local function enableESP()
         createESP(player)
     end
 
-    game.Players.PlayerAdded:Connect(function(player)
-        player
+    game.Players.PlayerAdded:
